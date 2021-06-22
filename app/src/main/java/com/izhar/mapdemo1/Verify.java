@@ -39,7 +39,7 @@ public class Verify extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify);
-
+        setTitle("Verification");
         mAuth = FirebaseAuth.getInstance();
 
         progressBar = findViewById(R.id.progress);
@@ -73,8 +73,13 @@ public class Verify extends AppCompatActivity {
         });
     }
     private void verifyCode(String code) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-        signInWithCredential(credential);
+
+        try {
+            PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
+            signInWithCredential(credential);
+        } catch (Exception e) {
+            
+        }
     }
     private void signInWithCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
