@@ -4,60 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_700"
     tools:context=".Login">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/woza"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
-        android:layout_above="@id/l1"/>
-    <com.google.android.material.textfield.TextInputLayout
+        android:src="@drawable/woza" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/round_edit_text"
         android:layout_centerInParent="true"
-        android:id="@+id/l1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="phone"
-        android:layout_margin="5dp">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:id="@+id/phone"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/l2"
-        android:layout_below="@id/l1"
+        android:paddingLeft="15dp"
+        android:elevation="10dp"
+        android:inputType="phone" />
+
+    <EditText
+        android:layout_below="@id/phone"
+        android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:passwordToggleEnabled="true"
+        android:layout_height="50dp"
+        android:layout_marginVertical="15dp"
+        android:layout_marginHorizontal="15dp"
+        android:paddingLeft="15dp"
+        android:background="@drawable/round_edit_text"
         android:hint="password"
-        android:layout_margin="5dp">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:id="@+id/password"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        android:inputType="textPassword" />
 
     <Button
-        android:layout_below="@id/l2"
+        android:layout_below="@id/password"
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:id="@+id/login"
+        android:layout_marginHorizontal="85dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/round_btn"
         android:onClick="register"
-        android:text="sign up"/>
+        android:text="sign up" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/login"
         android:layout_centerHorizontal="true"
-        android:text="already have account? SING IN"
-        android:onClick="login"
         android:layout_margin="10dp"
-        android:textColor="@color/design_default_color_error"/>
+        android:onClick="login"
+        android:textStyle="bold"
+        android:text="already have account? SING IN"
+        android:textColor="@color/white" />
 </RelativeLayout>
