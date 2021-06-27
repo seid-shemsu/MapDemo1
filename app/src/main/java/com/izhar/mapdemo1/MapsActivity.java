@@ -40,12 +40,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LocationListener,GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener{
 
+
     private GoogleMap mMap;
     Location mLastLocation;
     Marker mCurrLocationMarker;
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
     private FusedLocationProviderClient fusedLocationClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +88,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onConnected(Bundle bundle) {
 
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000);
+        mLocationRequest.setInterval(3000);
         mLocationRequest.setFastestInterval(1000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         if (ContextCompat.checkSelfPermission(this,
@@ -113,7 +115,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("Current Position");
+        markerOptions.title("You");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
         mCurrLocationMarker = mMap.addMarker(markerOptions);
 
@@ -130,6 +132,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        
+
     }
 }
