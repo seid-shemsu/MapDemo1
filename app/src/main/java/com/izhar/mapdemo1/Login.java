@@ -33,10 +33,10 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.password);
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
-        /*if (user != null){
+        if (user != null){
             startActivity(new Intent(this, MapsActivity.class));
             finish();
-        }*/
+        }
 
     }
 
