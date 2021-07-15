@@ -11,12 +11,12 @@
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
         android:elevation="5dp"
-        android:layout_margin="5dp">
+        android:layout_marginHorizontal="5dp">
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_weight="65"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginHorizontal="5dp"
             android:hint="search place"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <AutoCompleteTextView
@@ -32,11 +32,19 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:text="search"
-            android:layout_marginVertical="5dp"
             android:id="@+id/search"/>
     </LinearLayout>
     <com.google.android.gms.maps.MapView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/map"/>
+
+    <ImageView
+        android:id="@+id/my_pos"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/my_location"/>
 </RelativeLayout>
